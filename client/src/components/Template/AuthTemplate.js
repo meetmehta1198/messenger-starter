@@ -67,15 +67,16 @@ const AuthTemplate = (props) => {
 
   const getPasswordField = () => {
     return (
-      <Box><FormControl margin="normal" required>
-        <TextField
-          label="Password"
-          aria-label="Password"
-          type="password"
-          name="password"
-          required
-        />
-      </FormControl>
+      <Box>
+        <FormControl margin="normal" required>
+          <TextField
+            label="Password"
+            aria-label="Password"
+            type="password"
+            name="password"
+            required
+          />
+        </FormControl>
       </Box>
     );
   };
@@ -178,7 +179,12 @@ const AuthTemplate = (props) => {
     <>
       <Grid container>
         <Grid item xs={12} sm={6} md={6} lg={6}>
-          <img src={signupImage} alt="Signup" object-fit="cover" style={{ width: "100%" }} />
+          <img
+            src={signupImage}
+            alt="Signup"
+            object-fit="cover"
+            style={{ width: "100%" }}
+          />
         </Grid>
         <Grid item xs={12} sm={6} md={6} lg={6}>
           {props.type === "login" ? getLoginForm() : null}

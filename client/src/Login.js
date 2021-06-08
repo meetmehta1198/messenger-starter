@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { login } from "./store/utils/thunkCreators";
 import AuthTemplate from "./components/Template/AuthTemplate";
@@ -7,9 +7,7 @@ import AuthTemplate from "./components/Template/AuthTemplate";
 const Login = (props) => {
   const { user, login } = props;
 
-
   const handleLogin = async (event) => {
-    console.log("event",event)
     event.preventDefault();
     const username = event.target.username.value;
     const password = event.target.password.value;
@@ -21,9 +19,7 @@ const Login = (props) => {
     return <Redirect to="/home" />;
   }
 
-  return (
-     <AuthTemplate type="login" handleLogin={handleLogin}></AuthTemplate>
-  );
+  return <AuthTemplate type="login" handleLogin={handleLogin}></AuthTemplate>;
 };
 
 const mapStateToProps = (state) => {
